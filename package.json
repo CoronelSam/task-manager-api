@@ -1,0 +1,44 @@
+{
+  "name": "task-manager-api",
+  "version": "1.0.0",
+  "description": "API REST segura para gestión de tareas con autenticación JWT (Express + Sequelize + MySQL)",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:create": "sequelize-cli db:create --charset utf8mb4 --collate utf8mb4_unicode_ci",
+    "db:migrate": "sequelize-cli db:migrate",
+    "db:migrate:undo": "sequelize-cli db:migrate:undo:all",
+    "db:reset": "sequelize-cli db:migrate:undo:all && sequelize-cli db:migrate",
+    "test:postman": "newman run postman/task-manager-api.postman_collection.json"
+  },
+  "keywords": [
+    "express",
+    "jwt",
+    "sequelize",
+    "mysql",
+    "rest-api"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.4",
+    "express-validator": "^7.3.2",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.24.6",
+    "sequelize": "^6.37.8"
+  },
+  "devDependencies": {
+    "newman": "^6.2.3",
+    "sequelize-cli": "^6.6.5"
+  }
+}
